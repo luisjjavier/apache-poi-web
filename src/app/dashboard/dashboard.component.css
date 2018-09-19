@@ -1,0 +1,15 @@
+.ant-icon{
+  font-size: 5em;
+}
+
+.huge{
+  font-size: 40px;
+}
+.ant-card.primary{
+  border-color:#337ab7
+}
+ant-card.primary, .ant-card-head {
+  background-color: #337ab7!important;
+  color: white!important;
+}
+

@@ -6,19 +6,19 @@
       <th class="hidden">Apellido</th>
       <th class="hidden">Salario</th>
       <th class="hidden">Departamento</th>
-      <th>Action</th>
+      <th>Acciones</th>
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let data of basicTable.data">
+    <tr *ngFor="let data of basicTable.data; let i = index" >
       <td>{{data.name}}</td>
       <td class="hidden">{{data.lastname}}</td>
       <td class="hidden">{{data.salary |  currency:'USD':true:'2.2-2'}}</td>
       <td class="hidden">{{data.department}}</td>
       <td>
-        <a>Action 一 {{data.name}}</a>
+        <a (click)="onEdit(i)">Editar</a>
         <nz-divider nzType="vertical"></nz-divider>
-        <a>Delete</a>
+        <a nz-popconfirm nzTitle="Estas seguro de borrar este empleado?" (nzOnConfirm)="onDelete(i)">Borrar</a>
       </td>
     </tr>
     </tbody>

@@ -1,1 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+ant-card.primary, .ant-card-head, .ant-card-head-title {
+  background-color: #337ab7!important;
+  color: white!important;
+}
+

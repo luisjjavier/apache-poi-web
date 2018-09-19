@@ -15,12 +15,23 @@ export class EmployeeListComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.isLoading = true;
     this.employeeService.getAll().subscribe((employees) => {
       this.dataSet = employees;
       this.isLoading = false;
     }, () => {
       this.isLoading = false;
     });
+  }
+
+  onDelete(id: number) {
+    this.employeeService.delete(id).subscribe(() => {
+      this.ngOnInit();
+    });
+  }
+
+  onEdit(id: number) {
+
   }
 
 }
