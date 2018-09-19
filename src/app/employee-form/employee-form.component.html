@@ -1,0 +1,40 @@
+<nz-card nzTitle="Creación de empleado">
+  <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+    <nz-form-item>
+      <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="email">Nombres</nz-form-label>
+      <nz-form-control [nzSm]="14" [nzXs]="24">
+        <input nz-input formControlName="name" id="email">
+        <nz-form-explain *ngIf="validateForm.get('name').dirty && validateForm.get('name').errors">El nombre del empleado es importante!</nz-form-explain>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="lastname">Apellidos</nz-form-label>
+      <nz-form-control [nzSm]="14" [nzXs]="24">
+        <input nz-input formControlName="lastname" id="lastname">
+        <nz-form-explain *ngIf="validateForm.get('lastname').dirty && validateForm.get('lastname').errors">El apellido del empleado es importante!</nz-form-explain>
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+      <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="salary">Salario</nz-form-label>
+      <nz-form-control [nzSm]="14" [nzXs]="24">
+        <input nz-input formControlName="salary" id="salary">
+        <nz-form-explain *ngIf="validateForm.get('salary').dirty && validateForm.get('salary').errors">El Salario del empleado es importante!</nz-form-explain>
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+      <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="department">Departamento</nz-form-label>
+      <nz-form-control [nzSm]="14" [nzXs]="24">
+        <input nz-input formControlName="department" id="department">
+        <nz-form-explain *ngIf="validateForm.get('department').dirty && validateForm.get('department').errors">El departamento del empleado es importante!</nz-form-explain>
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item nz-row style="margin-bottom:8px;">
+      <nz-form-control [nzSpan]="14" [nzOffset]="6">
+        <button [nzLoading]="isSubmit" nz-button nzType="primary">Guardar</button>
+      </nz-form-control>
+    </nz-form-item>
+  </form>
+</nz-card>
