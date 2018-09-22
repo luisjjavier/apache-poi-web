@@ -1,0 +1,25 @@
+<nz-card  nzTitle="Crear documento">
+  <form nz-form  [formGroup]="validateForm" (ngSubmit)="submitForm()">
+    <nz-form-item>
+      <nz-form-control>
+        <nz-input-group nzPrefixIcon="anticon anticon-file">
+          <input formControlName="filename" nz-input placeholder="Nombre del documento sin la extension">
+        </nz-input-group>
+        <nz-form-explain *ngIf="validateForm.get('filename').dirty && validateForm.get('filename').errors">Por favor ingrese el nombre del archivo</nz-form-explain>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-control>
+        <nz-input-group >
+          <textarea formControlName="paragraph" nz-input  placeholder="parrafo"></textarea>
+        </nz-input-group>
+        <nz-form-explain *ngIf="validateForm.get('paragraph').dirty && validateForm.get('paragraph').errors">Por favor ingrese un parrafo</nz-form-explain>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-control>
+        <button nz-button nzType="primary" [disabled]="!validateForm.valid">Crear</button>
+      </nz-form-control>
+    </nz-form-item>
+  </form>
+</nz-card>
