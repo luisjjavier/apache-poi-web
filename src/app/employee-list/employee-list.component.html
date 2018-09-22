@@ -16,7 +16,7 @@
       <td class="hidden">{{data.salary |  currency:'USD':true:'2.2-2'}}</td>
       <td class="hidden">{{data.department}}</td>
       <td>
-        <a (click)="onEdit(i)">Editar</a>
+        <a routerLink="./{{i+1}}">Editar</a>
         <nz-divider nzType="vertical"></nz-divider>
         <a nz-popconfirm nzTitle="Estas seguro de borrar este empleado?" (nzOnConfirm)="onDelete(i)">Borrar</a>
       </td>

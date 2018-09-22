@@ -13,6 +13,8 @@ import {EmployeeListComponent} from './employee-list/employee-list.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {EmployeeService} from './services/employee.service';
 import { EmployeeFormComponent } from './employee-form/employee-form.component';
+import { DocumentsComponent } from './documents/documents.component';
+import {DocumentsService} from './services/documents.service';
 
 
 registerLocaleData(en);
@@ -20,7 +22,9 @@ registerLocaleData(en);
 const appRoutes: Routes = [
   {path: 'employees', component: EmployeeListComponent},
   {path: 'dashboard', component: DashboardComponent},
+  {path: 'employees/:id', component: EmployeeFormComponent},
   {path: 'new-employee', component: EmployeeFormComponent},
+  {path: 'documents', component: DocumentsComponent},
   {
     path: '',
     redirectTo: '/employees',
@@ -34,6 +38,7 @@ const appRoutes: Routes = [
     EmployeeListComponent,
     DashboardComponent,
     EmployeeFormComponent,
+    DocumentsComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,7 +50,7 @@ const appRoutes: Routes = [
     HttpClientModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [{provide: NZ_I18N, useValue: en_US}, EmployeeService],
+  providers: [{provide: NZ_I18N, useValue: en_US}, EmployeeService,DocumentsService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

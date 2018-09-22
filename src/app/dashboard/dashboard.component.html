@@ -1,24 +1,25 @@
 <div nz-row [nzGutter]="8">
   <div nz-col style="margin-bottom: 10px" [nzXs]="{ span: 24 }" [nzLg]="{ span: 8}">
-    <nz-card class="primary"  nzTitle="Cantidad de empleados">
-      <i class="anticon anticon-bar-chart ant-icon"></i> <span style="float: right" class="huge">{{employeesQuantity}}</span>
+    <nz-card  [nzLoading]="isLoading" class="primary"  nzTitle="Cantidad de empleados">
+      <i class="anticon anticon-usergroup-add ant-icon"></i> <span style="float: right" class="huge">{{employeesQuantity}}</span>
+    </nz-card>
+  </div>
+  <div nz-col  style="margin-bottom: 10px" [nzXs]="{ span: 24 }" [nzLg]="{ span: 8}">
+    <nz-card [nzLoading]="isLoading" nzTitle="Salario más alto">
+      <i style="color: #16550e;" class="anticon ant-icon anticon-caret-up"></i><span style="float: right" class="huge">{{maxSalary | currency}}</span>
     </nz-card>
   </div>
   <div nz-col style="margin-bottom: 10px" [nzXs]="{ span: 24 }" [nzLg]="{ span: 8}">
-    <nz-card nzTitle="Cantidad de empleados">
-      <i class="anticon anticon-bar-chart ant-icon"></i> <span style="float: right" class="huge">{{employeesQuantity}}</span>
-    </nz-card>
-  </div>
-  <div nz-col style="margin-bottom: 10px" [nzXs]="{ span: 24 }" [nzLg]="{ span: 8}">
-    <nz-card nzTitle="Cantidad de empleados">
-      <i class="anticon anticon-bar-chart ant-icon"></i> <span style="float: right" class="huge">{{employeesQuantity}}</span>
+    <nz-card [nzLoading]="isLoading" nzTitle="Salario minimo">
+
+      <i style="color: #8e0f29;" class="anticon anticon-caret-down ant-icon"></i> <span style="float: right" class="huge">{{minSalary | currency}}</span>
     </nz-card>
   </div>
 </div>
-<div nz-row [nzGutter]="8">
+<div nz-row  [nzGutter]="8">
   <div nz-col [nzXs]="{ span: 24 }" [nzLg]="{ span: 24}">
-    <nz-card nzTitle="Card title">
-      <p>Card content</p>
+    <nz-card nzTitle="Grafico de barras">
+      <canvas id="myChart" width="100%" height="400px"></canvas>
     </nz-card>
   </div>
 </div>

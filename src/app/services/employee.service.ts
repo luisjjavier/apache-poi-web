@@ -28,8 +28,8 @@ export class EmployeeService {
     return this.http.delete(`${this.routePrefix}/employees/${id}`);
   }
 
-  update(employee: Employee) {
-    return this.http.put(`${this.routePrefix}/employees`, employee);
+  update(id: number, employee: Employee) {
+    return this.http.put(`${this.routePrefix}/employees/${id}`, employee);
   }
 }
 
